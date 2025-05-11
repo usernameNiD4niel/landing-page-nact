@@ -4,12 +4,13 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Check, ChevronRight, BarChart2, Zap, Shield, Github, Twitter, Linkedin } from "lucide-react"
+import { Check, ChevronRight, BarChart2, Zap, Shield, Github, Twitter, Linkedin, Moon } from "lucide-react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
 import { ScrollProgress } from "./components/scroll-progress"
 import { AnimatedSection } from "./components/animated-section"
 import { ScrollIndicator } from "./components/scroll-indicator"
+import ThemeChanger from "@/components/theme-changer"
 
 export default function LandingPage() {
   const ref = useRef(null)
@@ -31,16 +32,37 @@ export default function LandingPage() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Zap className="h-6 w-6 text-teal-500" />
-            <span className="text-xl font-bold">StreamLine</span>
+            <span className="text-xl font-bold text-teal-500">NACT</span>
           </div>
           <nav className="hidden md:flex gap-6">
-            <Link href="#features" className="text-sm font-medium hover:text-teal-500 transition-colors">
+            <Link 
+              href="#features" 
+              className="text-sm font-medium hover:text-teal-500 transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Features
             </Link>
-            <Link href="#testimonials" className="text-sm font-medium hover:text-teal-500 transition-colors">
+            <Link 
+              href="#testimonials" 
+              className="text-sm font-medium hover:text-teal-500 transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Testimonials
             </Link>
-            <Link href="#pricing" className="text-sm font-medium hover:text-teal-500 transition-colors">
+            <Link 
+              href="#pricing" 
+              className="text-sm font-medium hover:text-teal-500 transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Pricing
             </Link>
             <Link href="#" className="text-sm font-medium hover:text-teal-500 transition-colors">
@@ -52,6 +74,7 @@ export default function LandingPage() {
               Sign In
             </Link>
             <Button className="bg-teal-500 hover:bg-teal-600">Get Started</Button>
+            <ThemeChanger />
           </div>
         </div>
       </header>
@@ -383,7 +406,7 @@ export default function LandingPage() {
                   Start Free Trial
                   <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
-                <Button variant="outline" className="border-white text-white hover:bg-teal-600">
+                <Button variant="outline" className="border-white text-white bg-teal-600 ">
                   Schedule a Demo
                 </Button>
               </div>

@@ -7,9 +7,10 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "StreamLine - Streamline Your Workflow",
-  description: "The all-in-one platform that helps teams work smarter, collaborate better, and deliver faster.",
-    generator: 'v0.dev'
+  title: "NACT - North Atlantic Container Trading.",
+  description: "Landing page that helps the company to showcase the services.",
+    generator: 'Next.js',
+    creator: "NACT Developer"
 }
 
 export default function RootLayout({
