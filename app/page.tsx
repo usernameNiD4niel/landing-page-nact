@@ -65,8 +65,15 @@ export default function LandingPage() {
             >
               Pricing
             </Link>
-            <Link href="#" className="text-sm font-medium hover:text-teal-500 transition-colors">
-              Blog
+            <Link 
+              href="#contact" 
+              className="text-sm font-medium hover:text-teal-500 transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Contact
             </Link>
           </nav>
           <div className="flex items-center gap-4">
@@ -392,7 +399,7 @@ export default function LandingPage() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-teal-500 text-white">
+        <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-teal-500 text-white">
           <div className="container px-4 md:px-6">
             <AnimatedSection className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -462,8 +469,8 @@ export default function LandingPage() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-sm hover:text-teal-500 transition-colors">
-                    Blog
+                  <Link href="#contact" className="text-sm hover:text-teal-500 transition-colors">
+                    Contact
                   </Link>
                 </li>
                 <li>
